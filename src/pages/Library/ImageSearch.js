@@ -14,15 +14,15 @@ class Search extends React.Component {
     this.state = {
       page: 1,
       photos: null,
+      prevPage : null,
+      nextPage : null,
     };
   }
 
-  searchImage = () => {
+  searchImage() {
     const searchDOM = ReactDOM.findDOMNode(this.refs.search);
     let text = searchDOM.value.trim();
-
-    const pageDOM = ReactDOM.findDOMNode(this.refs.page);
-    let page = pageDOM.value.trim();
+    let page = this.state.page;
 
     const API_KEY = "AIzaSyCU03su66ziXV0bwEW2SWisrKT61JdyOvE";
     const API_ID = "007912717314554625778:w6rqq0udw3s";
@@ -36,49 +36,96 @@ class Search extends React.Component {
           console.log('Error Status Code: ' + res.status);
           return;
         }
-
         // Examine the text in the response
         res.json().then(data => {
-          // console.log(data);
-          console.log(data.items);
-
-          this.setState({
-            photos: map(data.items, (photo, key) => ({ id: key, ...photo })),
-          });
+          if (data.queries.previousPage) {
+            this.setState({prevPage: true,
+              nextPage: true,
+              photos: map(data.items, (photo, key) => ({ id: key, ...photo }))})
+          } else {
+            this.setState({nextPage: true,
+              prevPage: null,
+              photos: map(data.items, (photo, key) => ({ id: key, ...photo }))
+            });
+          }
         });
       });
   };
 
+  searchNextPage() {
+    this.setState({page: this.state.page + 10}, () => {
+        this.searchImage()
+      });
+  }
+
+  searchPrevPage() {
+    this.setState({page: this.state.page - 10}, () => {
+      this.searchImage()
+    });
+  }
+
+  renderPrevNextButton(next, prev) {
+    if (prev) {
+      return (
+        <div>
+          <button onClick={() => this.searchPrevPage()}>이전페이지</button>
+          <button onClick={() => this.searchNextPage()}>다음페이지</button>
+        </div>
+      )
+    } else if (next) {
+      return (
+        <button onClick={() => this.searchNextPage()}>다음페이지</button>
+      )
+    } else {
+      return (
+        <div></div>
+      )
+    }
+  }
+
+
   render() {
+    const { photos, nextPage, prevPage } = this.state;
     return (
       <div>
         Search
         <div id="gsearch">
           <input type="text" ref="search" placeholder="검색어 입력" />
-          <input type="text" ref="page" placeholder="페이지번호" value={this.state.page} onChange={e => this.setState({page: e.target.value})} />
-          <button onClick={()=>this.searchImage(1)}>검색</button>
+          <button onClick={()=>this.searchImage()}>검색</button>
         </div>
-
         <div>
           {
-            isEmpty(this.state.photos) ? (
-              <div>
-                데이터 없음
-              </div>
-            ) : this.state.photos.map((photo) => {
-              return (
-                <div key={photo.id}>
-                  {photo.title}<br />
-                  <img
-                    src={photo.link}
-                    width={photo.image.width}
-                    height={photo.image.height}
-                    alt={photo.snippet}
-                  />
+            isEmpty(photos) ?
+                <div>
+                  데이터 없음
+                </div>
+              : (
+                <div>
+                  {
+                    photos.map((photo) => {
+                      // console.log("photo",photo.title);
+                      return (
+                        <div key={photo.id}>
+                          {photo.title}<br />
+                          <img
+                            src={photo.link}
+                            // width={photo.image.width}
+                            // height={photo.image.height}
+                            width="200"
+                            height="200"
+                            alt={photo.snippet}
+                          />
+                          <input type="checkbox" value={photo.id}/>
+                        </div>
+                      )
+                    })
+                  }
                 </div>
               )
-            })
           }
+        </div>
+        <div>
+          {this.renderPrevNextButton(nextPage, prevPage)}
         </div>
       </div>
     );
