@@ -64,17 +64,47 @@ class Search extends React.Component {
     });
   }
 
+  saveImages() {
+    const value = document.getElementsByName('check_photo');
+    const image = document.getElementsByTagName('img');
+    const searchDOM = ReactDOM.findDOMNode(this.refs.search);
+    const search_text = searchDOM.value.trim();
+
+    const len = value.length;
+    const image_list = [];
+    for(var i=0; i<len; i++){
+      var image_dict = {};
+      if(value[i].checked === true){
+        const img_url = image.item(value[i].value).src;
+        const img_title = image.item(value[i].value).title;
+        image_dict["search_text"] = search_text;
+        image_dict["img_title"] = img_title;
+        image_dict["img_url"] = img_url;
+        // console.log("check src",image.item(value[i].value).src);
+        // console.log("check title",image.item(value[i].value).title);
+        image_list.push(image_dict)
+      }
+    }
+    console.log("select image list",image_list)
+    // return image_dict
+  }
+
+
   renderPrevNextButton(next, prev) {
     if (prev) {
       return (
         <div>
           <button onClick={() => this.searchPrevPage()}>이전페이지</button>
           <button onClick={() => this.searchNextPage()}>다음페이지</button>
+          <button onClick={() => this.saveImages()}>저장하기</button>
         </div>
       )
     } else if (next) {
       return (
-        <button onClick={() => this.searchNextPage()}>다음페이지</button>
+        <div>
+          <button onClick={() => this.searchNextPage()}>다음페이지</button>
+          <button onClick={() => this.saveImages()}>저장하기</button>
+        </div>
       )
     } else {
       return (
@@ -103,19 +133,19 @@ class Search extends React.Component {
                 <div>
                   {
                     photos.map((photo) => {
-                      // console.log("photo",photo.title);
                       return (
                         <div key={photo.id}>
                           {photo.title}<br />
                           <img
                             src={photo.link}
+                            title={photo.title}
                             // width={photo.image.width}
                             // height={photo.image.height}
                             width="200"
                             height="200"
                             alt={photo.snippet}
                           />
-                          <input type="checkbox" value={photo.id}/>
+                          <input type="checkbox" name="check_photo" value={photo.id}/>
                         </div>
                       )
                     })
