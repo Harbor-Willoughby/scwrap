@@ -1,36 +1,25 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter,
-  Route,
-  Link,
-} from 'react-router-dom';
-import {
-  connect,
-} from 'react-redux';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import MyPage from './pages/MyPage';
 import Trip from './stories/trip/trip';
 import TripDetail from './stories/trip/trip-detail';
-import logo from './logo.svg';
 import './App.css';
-import store from './store';
 import firebase from './firebase';
 import { loginUser, logoutUser } from './actions';
+import Library from "./pages/Library/Library";
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.props.loginUser(user);
       } 
     })
-  }
+  };
   render() {
     return (
       <BrowserRouter>
@@ -58,6 +47,11 @@ class App extends Component {
                   Trip
                 </Link>
               </li>
+              <li>
+                <Link to="/library">
+                  library
+                </Link>
+              </li>
             </ul>
           </nav>
           <div>
@@ -66,6 +60,7 @@ class App extends Component {
             <Route path="/mypage" component={MyPage} />
             <Route exact path="/trip" component={Trip} /> 
             <Route path="/trip/:tripId" component={TripDetail} /> 
+            <Route path="/library" component={Library} />
           </div>
         </div>
       </BrowserRouter>
