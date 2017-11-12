@@ -1,7 +1,3 @@
-import firebase from './firebase';
-
-const auth = firebase.auth();
-
 export const loginGoogleUser = () => ({
   type: 'LOGIN_GOOGLE_USER_REQUEST',
 })
