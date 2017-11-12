@@ -59,7 +59,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/mypage" component={MyPage} />
             <Route exact path="/trip" component={Trip} /> 
-            <Route path="/trip/:tripId" component={TripDetail} /> 
+            <Route path="/trip/:tripKey" component={TripDetail} /> 
             <Route path="/library" component={Library} />
           </div>
         </div>
