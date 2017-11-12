@@ -21,3 +21,19 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+/**
+ *  Main App
+ */
+/* Reset */
+/* Box Model */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#root {
+  width: 100%; }
+
+.main-page {
+  background: red; }
