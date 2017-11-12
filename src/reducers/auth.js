@@ -1,4 +1,5 @@
 const DEFAULT_STATE = {
+  uid: null,
   name: '',
   email: '',
   profileImageUrl: '',
@@ -15,18 +16,6 @@ const authReducer = (state = DEFAULT_STATE, action) => {
     }
   }
 
-  /*
-  if (action.type === 'LOGIN_USER_SUCCESS') {
-    return {
-      ...state,
-      isLoggingIn: false,
-      name: action.payload.additionalUserInfo.profile.name,
-      profileImageUrl: action.payload.additionalUserInfo.profile.picture,
-      email: action.payload.additionalUserInfo.profile.email,
-    }
-  }
-  */
-
   if (action.type === 'LOGIN_USER_FAILED') {
     return {
       ...state,
@@ -38,6 +27,7 @@ const authReducer = (state = DEFAULT_STATE, action) => {
   if (action.type === 'LOGIN_USER') {
     return {
       ...state,
+      uid: action.payload.uid,
       name: action.payload.displayName,
       email: action.payload.email,
       profileImageUrl: action.payload.photoURL,
@@ -49,6 +39,7 @@ const authReducer = (state = DEFAULT_STATE, action) => {
   if (action.type === 'LOGOUT_USER') {
     return {
       ...state,
+      uid: null,
       name: '',
       profileImageUrl: '',
       email: '',

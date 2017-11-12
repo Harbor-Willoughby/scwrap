@@ -1,11 +1,9 @@
-import firebase from './firebase';
-
-const auth = firebase.auth();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-
 export const loginGoogleUser = () => ({
-  type: 'LOGIN_USER_REQUEST',
+  type: 'LOGIN_GOOGLE_USER_REQUEST',
+})
+
+export const loginFacebookUser = () => ({
+  type: 'LOGIN_FACEBOOK_USER_REQUEST',
 })
 
 // 실제적인 로그인이 일어났을 때 실행되는 action creator

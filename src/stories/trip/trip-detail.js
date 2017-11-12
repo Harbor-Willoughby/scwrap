@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 import firebase from '../../firebase';
 import map from 'lodash/map';
 import { objectValue } from '../../util/objectUtill';
-
-const propTypes = {};
-const defaultProps = {};
+import {
+  connect,
+} from 'react-redux';
 
 class TripDetail extends Component {
   constructor(props) {
@@ -16,9 +15,9 @@ class TripDetail extends Component {
   }
 
   componentDidMount = () => {
-  	var id = this.props.match.params.tripId;
-  	console.log('id : ' + id);
-    firebase.database().ref('/trips/' + id).once('value').then((snapshot) => {
+  	var key = this.props.match.params.tripKey;
+  	console.log('/trips/' + key);
+    firebase.database().ref('/trips/' + key).once('value').then((snapshot) => {
     	this.setState({
     		trip: snapshot.val()
     	});
@@ -29,13 +28,14 @@ class TripDetail extends Component {
     return (
     	<div>
         	<div>TripDetail Component</div>
-        	<h1>{ objectValue(() => this.state.trip.title, '') }</h1>
+        	<h1>{ objectValue(() => this.state.trip.text, '') }</h1>
         </div>
     );
   }
 }
 
-TripDetail.propTypes = propTypes;
-TripDetail.defaultProps = defaultProps;
+const mapStateToProps = (state) => ({
+  uid: state.auth.uid
+})
 
-export default TripDetail;
+export default connect(mapStateToProps)(TripDetail);
