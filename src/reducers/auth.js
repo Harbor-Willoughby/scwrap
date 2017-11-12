@@ -15,18 +15,6 @@ const authReducer = (state = DEFAULT_STATE, action) => {
     }
   }
 
-  /*
-  if (action.type === 'LOGIN_USER_SUCCESS') {
-    return {
-      ...state,
-      isLoggingIn: false,
-      name: action.payload.additionalUserInfo.profile.name,
-      profileImageUrl: action.payload.additionalUserInfo.profile.picture,
-      email: action.payload.additionalUserInfo.profile.email,
-    }
-  }
-  */
-
   if (action.type === 'LOGIN_USER_FAILED') {
     return {
       ...state,
