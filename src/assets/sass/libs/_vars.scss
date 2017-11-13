@@ -1,64 +1,50 @@
-// skel-baseline v3.0.1 | (c) n33 | skel.io | MIT licensed
-
 // Misc.
 	$misc: (
-		z-index-base:		10000
+		z-index-base:					10000,
+		gallery-lightbox-opacity:		0.875
 	);
 
 // Duration.
 	$duration: (
-		nav:				0.5s,
-		transition:			0.2s,
-		cal_y:				350ms,
-		cal_blur:			100ms
+		transition:						0.2s,
+		gallery-lightbox-fadein:		0.5s
 	);
 
 // Size.
 	$size: (
-		border-radius:		4px,
-		border-width:		1px,
-		element-height:		2.75em,
-		element-margin:		2em
+		border-radius:					0.25rem,
+		element-height:					2.5rem,
+		element-margin:					1.5rem,
+		pad:							3.5rem,
+		pad-small-tb:					3.5rem * 0.825,
+		pad-small-lr:					3.5rem * 0.5,
+		span-fixed:						10rem,
+		span-variable:					10%
 	);
 
 // Font.
 	$font: (
-		family:				(Arial, Helvetica, sans-serif),
-		family-fixed:		('Courier New', monospace),
-		weight:				normal,
-		weight-bold:		bold
+		family: 'Spoqa Han Sans, Georgia, serif',
+		font-family: 'GOTHAM, Spoqa Han Sans, Georgia, serif',
+		family-heading:					(Arial, Helvetica, sans-serif),
+		family-fixed:					('Courier New', monospace),
+		weight:							300,
+		weight-bold:					400,
+		weight-heading:					700
 	);
 
 // Palette.
 	$palette: (
-		bg:					white,
-		fg:					#F7F7F7,
-		fg-bold:			#747474,
-		fg-light:			#bbb,
-		border:				rgba(144,144,144,0.25),
-		border-bg:			rgba(144,144,144,0.075),
-		border2:			rgba(144,144,144,0.5),
-		border2-bg:			rgba(144,144,144,0.2),
-
-		accent1: (
-			bg:				#5AA6ED,
-			fg:				mix(#5AA6ED, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#5AA6ED, #ffffff, 40%),
-			border:			rgba(255,255,255,0.25),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(255,255,255,0.5),
-			border2-bg:		rgba(255,255,255,0.2)
-		),
-
-		accent2: (
-			bg:				#5a5a5a,
-			fg:				mix(#5a5a5a, #ffffff, 25%),
-			fg-bold:		#ffffff,
-			fg-light:		mix(#5a5a5a, #ffffff, 40%),
-			border:			rgba(255,255,255,0.15),
-			border-bg:		rgba(255,255,255,0.075),
-			border2:		rgba(255,255,255,0.5),
-			border2-bg:		rgba(255,255,255,0.2)
-		)
+		bg:								#2e2b37,
+		bg-alt:							#e1e6e1,
+		fg:								rgba(255,255,255,0.75),
+		fg-bold:						rgba(255,255,255,0.875),
+		fg-light:						rgba(255,255,255,0.5),
+		border:							rgba(255,255,255,0.25),
+		border-bg:						rgba(255,255,255,0.075),
+		border-bg-alt:					rgba(255,255,255,0.125),
+		accent1:						#726193,
+		accent2:						#e37b7c,
+		accent3:						#ffe4b4,
+		accent4:						#353865
 	);
