@@ -4,7 +4,7 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div>Main</div>
+      <div className="main-page">This is 00_main_01 page</div>
     );
   }
 }

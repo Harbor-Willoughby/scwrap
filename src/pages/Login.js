@@ -12,6 +12,7 @@ class Login extends React.Component {
       <div>
         Login
         <h1>
+          {this.props.uid}
           {this.props.name}
           {this.props.email}
         </h1>
@@ -34,6 +35,7 @@ class Login extends React.Component {
 }
 const mapStateToProps = (state) => ({
   isLoggedIn: !!state.auth.name,
+  uid: state.auth.uid,
   name: state.auth.name,
   email: state.auth.email,
   profileImageUrl: state.auth.profileImageUrl,
