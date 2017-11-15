@@ -20,6 +20,7 @@ class Library extends Component {
             <div>
                 <button onClick={() => this.changeContentType('imageUpload')}>이미지 업로드</button>
                 <button onClick={() => this.changeContentType('imageSearch')}>이미지 검색</button>
+                <button onClick={() => this.changeContentType('memo')}>메모 & 링크</button>
                 <Contents type={this.state.content_type}/>
             </div>
         )
