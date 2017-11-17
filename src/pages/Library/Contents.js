@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import ImageUpload from "./ImageUpload";
 import ImageSearch from "./ImageSearch";
-import Memo from "./Memo/Memo";
-
+import Memo from "./Memo";
 
 class Contents extends Component {
   render() {
