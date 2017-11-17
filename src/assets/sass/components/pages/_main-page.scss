@@ -1,0 +1,46 @@
+.main-page {
+	background: red;
+}
+
+
+.main-page {
+	overflow-x: hidden;
+	height: 100vh;
+	background: url('assets/images/00_main_01_bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; // Prevents animation/transition "flicker" on page load.
+	// Automatically added/removed by js/main.js.
+	&.is-loading {
+		*,
+		*:before,
+		*:after {
+			@include vendor('animation',
+			'none !important');
+			@include vendor('transition',
+			'none !important');
+		}
+	}
+}
+
+.main-nav {
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	.scwrap-logo {
+		float:left;
+			margin-left: 1.9rem;
+			margin-top: 1.9rem;
+			font-size:2rem;
+	}
+	.scwrap-profile {
+		float:right;
+			margin-right: 1.9rem;
+			margin-top: 1.9rem;
+			font-size:2rem;
+	}
+}
+.main-content {
+	color: _palette(fg);
+}
