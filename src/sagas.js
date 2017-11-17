@@ -37,6 +37,18 @@ function* loginWithEmailProvider(action) {
   }
 }
 
+function* createWithEmailProvider(action) {
+  const email = action.payload.email;
+  const password = action.payload.password;
+
+  try {
+    const user = yield auth.createUserWithEmailAndPassword(email, password);
+    yield put({type: "CREATE_EMAIL_USER", payload: user});
+  } catch(e) {
+    yield put({type: "CREATE_EMAIL_USER_FAILED", payload: e.message});
+  }
+}
+
 function checkAuthStateChanged(action) {
   auth.onAuthStateChanged(action.payload);
 }
@@ -49,6 +61,7 @@ function* mySaga() {
   yield takeEvery("LOGIN_GOOGLE_USER_REQUEST", ()=>loginWithProvider(googleProvider));
   yield takeEvery("LOGIN_FACEBOOK_USER_REQUEST", ()=>loginWithProvider(facebookProvider));
   yield takeEvery("LOGIN_EMAIL_USER_REQUEST", loginWithEmailProvider);
+  yield takeEvery("CREATE_EMAIL_USER_REQUEST", createWithEmailProvider);
   yield takeEvery("CHECK_AUTH_STATE_CHANGED", checkAuthStateChanged);
   yield takeEvery("LOGOUT_USER", logoutUser);
 }
