@@ -13,6 +13,13 @@ export const loginEmailUser = (email, password) => ({
   }
 })
 
+export const createEmailUser = (email, password) => ({
+  type: 'CREATE_EMAIL_USER_REQUEST',
+  payload: {
+    email, password
+  }
+})
+
 export const checkAuthStateChanged = (callback) => ({
   type: 'CHECK_AUTH_STATE_CHANGED',
   payload: callback,
