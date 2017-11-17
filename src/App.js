@@ -8,7 +8,7 @@ import Trip from './stories/trip/trip';
 import TripDetail from './stories/trip/trip-detail';
 import './App.css';
 import firebase from './firebase';
-import { loginUser, logoutUser } from './actions';
+import { loginUser, logoutUser, linkFacebookUser } from './actions';
 import Library from "./pages/Library/Library";
 
 
