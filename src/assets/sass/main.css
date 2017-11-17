@@ -10,3 +10,23 @@
 
 .main-page {
   background: red; }
+
+.main-page {
+  overflow-x: hidden;
+  height: 100vh;
+  background: url("assets/images/00_main_01_bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  .main-page.is-loading *,
+  .main-page.is-loading *:before,
+  .main-page.is-loading *:after {
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important; }
