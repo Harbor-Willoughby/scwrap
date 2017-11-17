@@ -1,11 +1,25 @@
 input {
+	@include vendor('transition', ( 'border-color #{_duration(transition)} ease-in-out'));
 	background-color: transparent;
 	border: none;
 	outline: none;
-	border-bottom: 3px solid _palette(invert, fg-bold);
-	color: _palette(fg);
+	border-bottom: 3px solid;
 	text-align: center;
 	padding: 20px;
 	margin-bottom: 40px;
 	width: 100%;
+	font-size: 2.25rem;
+	caret-color: _palette(invert, fg-bold);
+	color: _palette(fg);
 }
+
+@mixin color-input($p: null) {
+	input {
+		border-color: _palette(fg);
+	}
+	&:focus {
+		border-color: _palette(invert, fg-bold);
+	}
+}
+
+@include color-input;

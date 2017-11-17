@@ -34,7 +34,6 @@ button,
 		border-radius: 3px;
 		width: 100%;
 	}
-
 }
 
 @mixin color-button($p: null) {
@@ -43,17 +42,13 @@ button,
 	input[type="button"],
 	button,
 	.button {
-
-
 		background: _palette(invert, fg-bold);
 		color: _palette(fg);
 		box-shadow: inset 0 0 0 _size(border-width) _palette($p, border);
-
 		&:hover {
 			box-shadow: inset 0 0 0 _size(border-width) _palette($p, accent);
 			color: _palette($p, accent) !important;
 		}
-
 		&:active {
 			background-color: transparentize(_palette($p, accent), 0.8);
 			box-shadow: inset 0 0 0 _size(border-width) _palette($p, accent);
@@ -61,6 +56,5 @@ button,
 		}
 	}
 }
-
 
 @include color-button;

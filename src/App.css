@@ -1689,15 +1689,27 @@ h6 {
   src: url("assets/fonts/Gotham/GothamBlack.woff2") format("woff2"), url("assets/fonts/Gotham/GothamBlack.woff") format("woff"), url("assets/fonts/Gotham/GothamBlack.ttf") format("truetype"); }
 
 input {
+  -moz-transition: border-color 0.2s ease-in-out;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -ms-transition: border-color 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
   background-color: transparent;
   border: none;
   outline: none;
-  border-bottom: 3px solid #ba78ff;
-  color: #fff;
+  border-bottom: 3px solid;
   text-align: center;
   padding: 20px;
   margin-bottom: 40px;
-  width: 100%; }
+  width: 100%;
+  font-size: 2.25rem;
+  caret-color: #ba78ff;
+  color: #fff; }
+
+input {
+  border-color: #fff; }
+
+:focus {
+  border-color: #ba78ff; }
 
 /* Button */
 input[type="submit"],
