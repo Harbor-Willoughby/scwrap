@@ -25,6 +25,41 @@
 /**
  *  Main App
  */
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }
+
+.container {
+  margin: 0 auto;
+  position: relative; }
+  @media screen and (min-width: 1024px) {
+    .container {
+      max-width: 960px;
+      width: 960px; }
+      .container.is-fluid {
+        margin-left: 32px;
+        margin-right: 32px;
+        max-width: none;
+        width: auto; } }
+  @media screen and (max-width: 1215px) {
+    .container.is-widescreen {
+      max-width: 1152px;
+      width: auto; } }
+  @media screen and (max-width: 1407px) {
+    .container.is-fullhd {
+      max-width: 1344px;
+      width: auto; } }
+  @media screen and (min-width: 1216px) {
+    .container {
+      max-width: 1152px;
+      width: 1152px; } }
+  @media screen and (min-width: 1408px) {
+    .container {
+      max-width: 1344px;
+      width: 1344px; } }
+
 /* Reset */
 /* Box Model */
 *, *:before, *:after {
@@ -32,8 +67,23 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-#root {
-  width: 100%; }
+/* Typography */
+body, input, select, textarea {
+  color: #ffffff;
+  font-family: "Spoqa Han Sans, Georgia, serif";
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.65; }
+
+@font-face {
+  font-family: 'Spoqa Han Sans';
+  font-weight: 700;
+  src: url("assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Bold.woff2") format("woff2"), url("assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Bold.woff") format("woff"), url("assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 700;
+  src: url("assets/fonts/Gotham/GothamBold.woff2") format("woff2"), url("assets/fonts/Gotham/GothamBold.woff") format("woff"), url("assets/fonts/Gotham/GothamBold.ttf") format("truetype"); }
 
 .main-page {
   background: red; }
@@ -72,3 +122,6 @@
     margin-right: 1.9rem;
     margin-top: 1.9rem;
     font-size: 2rem; }
+
+.main-content {
+  color: #ffffff; }

@@ -9,7 +9,9 @@ export default class Main extends React.Component {
           <span className="scwrap-logo">scwrap</span>
           <span className="scwrap-profile">profile</span>
         </nav>
-        This is 00_main_01 page
+        <div className="container main-content">
+          Scwrap 에서 여행을 SCRAP 하세요 ! 
+        </div>
       </div>
     );
   }
