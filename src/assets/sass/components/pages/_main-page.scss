@@ -43,8 +43,14 @@
 	height: 100vh;
 }
 .new-trip {
+	max-width: 500px;
+	margin: 96px auto 0 auto;
 	input {
 		display: block;
-		margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@include breakpoint(small) {
+		max-width: 400px;
 	}
 }

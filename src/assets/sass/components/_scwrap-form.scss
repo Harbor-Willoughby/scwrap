@@ -1,0 +1,35 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+select,
+textarea {
+	@include vendor('appearance', 'none');
+	background-color: transparent;
+	border-radius: _size(border-radius);
+	border: none;
+	border: solid _size(border-width);
+	color: inherit;
+	display: block;
+	outline: 0;
+	padding: 0 0.825rem;
+	text-decoration: none;
+	width: 100%;
+
+	&:invalid {
+		box-shadow: none;
+	}
+}
+input {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 3px solid _palette(invert, fg-bold);
+	color: _palette(fg);
+	text-align: center;
+	padding: 20px;
+	margin-bottom: 40px;
+	width: 100%;
+}
