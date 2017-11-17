@@ -16,7 +16,7 @@ export default class Main extends React.Component {
               <div className="new-trip">
                 <input />
                 <input />
-                <button>NEXT</button>
+                <button className="fit">NEXT</button>
               </div>
             </div>
           </div>
