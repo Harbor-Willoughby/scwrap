@@ -2,24 +2,25 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Main from './pages/Main';
-import Login from './pages/Login';
+import Login from './pages/login/Login';
 import MyPage from './pages/MyPage';
 import Trip from './stories/trip/trip';
 import TripDetail from './stories/trip/trip-detail';
 import './App.css';
 import firebase from './firebase';
-import { loginUser, logoutUser, linkFacebookUser } from './actions';
+import { checkAuthStateChanged, loginUser, logoutUser, linkFacebookUser } from './actions';
 import Library from "./pages/Library/Library";
 
 
 class App extends Component {
   componentDidMount = () => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
+    this.props.checkAuthStateChanged(user => {
+      if(user) {
         this.props.loginUser(user);
-      } 
-    })
+      }
+    });
   };
+  
   render() {
     return (
       <BrowserRouter>
@@ -71,4 +72,5 @@ class App extends Component {
 export default connect(null, (dispatch) => ({
   loginUser: (user) => dispatch(loginUser(user)),
   logoutUser: () => dispatch(logoutUser()),
+  checkAuthStateChanged: (callback) => dispatch(checkAuthStateChanged(callback))
 }))(App);
