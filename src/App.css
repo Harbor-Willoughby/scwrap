@@ -57,3 +57,18 @@
     -webkit-transition: none !important;
     -ms-transition: none !important;
     transition: none !important; }
+
+.main-nav {
+  position: absolute;
+  width: 100%;
+  z-index: 2; }
+  .main-nav .scwrap-logo {
+    float: left;
+    margin-left: 1.9rem;
+    margin-top: 1.9rem;
+    font-size: 2rem; }
+  .main-nav .scwrap-profile {
+    float: right;
+    margin-right: 1.9rem;
+    margin-top: 1.9rem;
+    font-size: 2rem; }
