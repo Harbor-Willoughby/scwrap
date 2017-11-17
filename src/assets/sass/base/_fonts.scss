@@ -1,31 +1,20 @@
-
-// @font-face {
-//     font-family: 'Spoqa Han Sans';
-//     font-weight: 100;
-//     src: local('Spoqa Han Sans Thin'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansThin.woff2') format('woff2'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansThin.woff') format('woff'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansThin.ttf') format('truetype');
-// }
-
-// @font-face {
-//     font-family: 'Spoqa Han Sans';
-//     font-weight: 300;
-//     src: local('Spoqa Han Sans Light'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansLight.woff2') format('woff2'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansLight.woff') format('woff'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansLight.ttf') format('truetype');
-// }
-
-// @font-face {
-//     font-family: 'Spoqa Han Sans';
-//     font-weight: 400;
-//     src: local('Spoqa Han Sans Regular'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff2') format('woff2'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansRegular.woff') format('woff'),
-//     url('https://cdn.rawgit.com/spoqa/spoqa-han-sans/01ff0283/Subset/SpoqaHanSans/SpoqaHanSansRegular.ttf') format('truetype');
-// }
-
+/**
+ *	Spoqa Han Sans
+ */
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Light.woff2') format('woff2'),
+    url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Light.woff') format('woff'),
+    url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Regular.woff2') format('woff2'),
+    url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Regular.woff') format('woff'),
+    url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Regular.ttf') format('truetype');
+}
 @font-face {
     font-family: 'Spoqa Han Sans';
     font-weight: 700;
@@ -34,8 +23,9 @@
     url('assets/fonts/SpoqaHanSans_subset/Spoqa Han Sans Bold.ttf') format('truetype');
 }
 
-
-
+/**
+ *	Gotham
+ */
 @font-face {
     font-family: 'Gotham';
     font-weight: 700;
@@ -43,5 +33,11 @@
     url('assets/fonts/Gotham/GothamBold.woff') format('woff'),
     url('assets/fonts/Gotham/GothamBold.ttf') format('truetype');
 }
-
+@font-face {
+    font-family: 'Gotham';
+    font-weight: 900;
+    src: url('assets/fonts/Gotham/GothamBlack.woff2') format('woff2'),
+    url('assets/fonts/Gotham/GothamBlack.woff') format('woff'),
+    url('assets/fonts/Gotham/GothamBlack.ttf') format('truetype');
+}
 
