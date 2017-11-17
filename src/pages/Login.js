@@ -1,6 +1,6 @@
 import React from 'react'
 import firebase from '../firebase';
-import { loginGoogleUser, logoutUser } from '../actions';
+import { loginGoogleUser, loginFacebookUser, logoutUser } from '../actions';
 import {
   connect,
 } from 'react-redux';
@@ -25,10 +25,20 @@ class Login extends React.Component {
           구글로 로그인하기
         </button>
         <button
+          onClick={this.props.loginFacebookUser}
+        >
+          페이스북으로 로그인하기
+        </button>
+        <button
           onClick={this.props.logoutUser}
         >
           로그아웃
         </button>
+        <form id="step1form">
+          <input type="text" placeholder="Email" name="email" />
+          <input type="password" placeholder="Password" name="password" />
+          <input type="submit" value="Login" onClick={this.props.loginEmailUser} />
+        </form>
       </div>
     );
   }
@@ -43,6 +53,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   loginGoogleUser: () => dispatch(loginGoogleUser()),
+  loginFacebookUser: () => dispatch(loginFacebookUser()),
   logoutUser: () => dispatch(logoutUser()),
 })
 
