@@ -1,6 +1,7 @@
 //Bulma
 @import "libs/bulma/sass/utilities/_all";
 @import "libs/bulma/sass/elements/container";
+@import "libs/bulma/sass/layout/hero";
 
 //Skel
 @import 'libs/vars';
@@ -134,7 +135,7 @@ grid: ( gutters: 2rem)));
 // }
 // Base.
 @import 'base/page';
-@import 'base/typography';
+@import 'base/scwrap-typography';
 @import 'base/fonts';
 // Component.
 // @import 'components/box';

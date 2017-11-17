@@ -1,8 +1,6 @@
 .main-page {
 	background: red;
 }
-
-
 .main-page {
 	overflow-x: hidden;
 	height: 100vh;
@@ -23,7 +21,6 @@
 		}
 	}
 }
-
 .main-nav {
 	position: absolute;
 	width: 100%;
@@ -43,4 +40,11 @@
 }
 .main-content {
 	color: _palette(fg);
+	height: 100vh;
+}
+.new-trip {
+	input {
+		display: block;
+		margin: 0 auto;
+	}
 }
