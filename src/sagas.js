@@ -16,7 +16,7 @@ function* loginWithProvider(provider) {
       let email = e.email;
       alert(email + "\n이메일로 이미 가입되어 있습니다.");
       yield put({type: "LOGIN_USER_FAILED", payload: e.message});
-    } else if (e.code == 'auth/popup-blocked') {
+    } else if (e.code === 'auth/popup-blocked') {
       // 팝업이 차단 된 경우 리다이렉트
       auth.signInWithRedirect(provider);
     } else {

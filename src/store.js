@@ -11,7 +11,7 @@ import sagas from './sagas';
 const sagaMiddleware = createSagaMiddleware();
 // mount it on the Store
 
-const createStoreWithMiddleware = applyMiddleware(sagaMiddleware, logger)(createStore)
+const createStoreWithMiddleware = applyMiddleware(sagaMiddleware, logger)(createStore);
 
 const store = createStoreWithMiddleware(rootReducer);
 

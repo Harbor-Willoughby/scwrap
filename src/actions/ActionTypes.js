@@ -1,3 +1,0 @@
-export const MEMO_POST = "MEMO_POST";
-export const MEMO_POST_SUCCESS = "MEMO_POST_SUCCESS";
-export const MEMO_POST_FAILURE = "MEMO_POST_FAILURE";
