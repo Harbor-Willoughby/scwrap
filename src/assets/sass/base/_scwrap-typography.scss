@@ -1,40 +1,103 @@
+/* Type */
 
-h2 {
-	&.major {
-		height: 50px;
-		font-size: 75.2px;
-		font-weight: 900;
-		line-height: 0.29;
-		letter-spacing: -1.9px;
-		text-align: left;
-		color: #ffffff;
+html {
+	font-size: 18pt;
+
+	@include breakpoint(xlarge) {
+		font-size: 14pt;
+	}
+
+	@include breakpoint(large) {
+		font-size: 12pt;
+	}
+
+	@include breakpoint(small) {
+		font-size: 11pt;
+	}
+
+	@include breakpoint(xxsmall) {
+		font-size: 10pt;
 	}
 }
 
-body, input, select, textarea {
+body {
+	background-color: _palette(bg);
 	color: _palette(fg);
 }
 
+body,
+input,
+select,
+textarea {
+	font-family: _font(family);
+	font-size: 1rem;
+}
 
-h1, h2, h3, h4, h5, h6 {
-	color: _palette(fg-bold);
-	a {
-		color: inherit;
-		text-decoration: none;
+h1 {
+	font-size: 3.5rem;
+	line-height: 1.2;
+}
+
+h2 {
+	font-size: 2.25rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+h4 {
+	font-size: 1.1rem;
+}
+
+h5 {
+	font-size: 0.9rem;
+}
+
+h6 {
+	font-size: 0.7rem;
+}
+
+@include breakpoint(small) {
+	p {
+		&.major {
+			font-size: 1.1rem;
+		}
+	}
+
+	h1 {
+		font-size: 2.5rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+
+	h4 {
+		font-size: 1rem;
 	}
 }
 
-	a {
-		@include vendor('transition', (
-			'color #{_duration(transition)} ease-in-out',
-			'border-bottom-color #{_duration(transition)} ease-in-out'
-		));
-		color: inherit;
-		border-bottom: dotted 1px;
-		text-decoration: none;
+@mixin color-typography($p: null) {
 
-		&:hover {
-			border-bottom-color: transparent;
-			color: _palette(accent3);
-		}
+	@if $p !=null {
+		background-color: _palette($p, bg);
+		color: _palette($p, fg);
 	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: _palette($p, fg);
+	}
+
+}
+
+@include color-typography;
