@@ -2693,3 +2693,17 @@ button,
     background: white; }
   #login .login-message {
     background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff); }
+    #login .login-message .hero-body {
+      height: 100%; }
+
+.login-title {
+  color: #010101; }
+
+#loginEmailForm input {
+  color: #E2E2E2; }
+
+#simpleLogin .login-facebook {
+  background: #4267b2; }
+
+#simpleLogin .login-google {
+  background: #eb4335; }

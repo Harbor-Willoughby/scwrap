@@ -7,6 +7,9 @@
 	}
 	.login-message {
 		background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff);
+		.hero-body {
+			height: 100%;
+		}
 	}
 	height: 100vh;
 	background: url('assets/images/01_login_01_bg.jpg') no-repeat center center;
@@ -14,4 +17,21 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover; // Prevents animation/transition "flicker" on page load.
+}
+.login-title {
+	color: #010101;
+}
+#loginEmailForm {
+	input {
+		color: #E2E2E2;
+	}
+}
+
+#simpleLogin {
+	.login-facebook {
+		background: #4267b2;
+	}
+	.login-google {
+		background: #eb4335;
+	}
 }

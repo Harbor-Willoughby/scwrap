@@ -33,13 +33,17 @@ class Login extends React.Component {
               { this.state.isCreateEmailUser && this.props.isLoggedIn ? <Finish /> : null }
             <Loggedin />
             </div>
-            <div className="column login-message">
-              <h2><span className="hello">안녕하세요!</span> <span className="nicetomeetyou">처음 뵙겠습니다.</span></h2>
-              <p><span className="scwrap">Scwrap</span> 의 회원이 되어주세요!</p>
-              { this.state.isCreateEmailUser ? 
-              <SignUp onComplete={this.showFinishEmailUser} />
-              : <button className="signup" onClick={this.showSignUpForm}>Sign up</button> 
-               }
+            <div className="column login-message hero is-three-fifths">
+              <div className="hero-body">
+                <div class="container">
+                  <h2><span className="hello">안녕하세요!</span> <span className="nicetomeetyou">처음 뵙겠습니다.</span></h2>
+                  <p><span>Scwrap</span> 의 회원이 되어주세요!</p>
+                  { this.state.isCreateEmailUser ? 
+                  <SignUp onComplete={this.showFinishEmailUser} />
+                  : <button className="signup" onClick={this.showSignUpForm}>Sign up</button> 
+                   }
+                 </div>
+               </div>
             </div>
           </div>
         </div>
