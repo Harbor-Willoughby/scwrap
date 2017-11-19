@@ -1,7 +1,7 @@
 //Bulma
-@import "../../../node_modules/bulma/sass/utilities/_all";
-@import "../../../node_modules/bulma/sass/elements/container";
-@import "../../../node_modules/bulma/sass/layout/hero";
+@import "../../../bulma/sass/utilities/_all";
+@import "../../../bulma/sass/elements/container";
+@import "../../../bulma/sass/layout/hero";
 
 //Skel
 @import 'libs/vars';
@@ -159,6 +159,5 @@ grid: ( gutters: 2rem)));
 @import 'components/pages/main-page';
 // Layout.
 // @import 'layout/wrapper';
-
 // add Images using background-image css, cause src path not workaround using ng-build
 // @import 'images.scss';
