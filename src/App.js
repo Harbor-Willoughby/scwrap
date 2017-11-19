@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Main from './pages/Main';
 import Login from './pages/login/Login';
+import Scrap from './pages/scrap/Scrap';
 import MyPage from './pages/MyPage';
 import Trip from './stories/trip/trip';
 import TripDetail from './stories/trip/trip-detail';
@@ -10,7 +11,6 @@ import './App.css';
 import firebase from './firebase';
 import { checkAuthStateChanged, loginUser, logoutUser, linkFacebookUser } from './actions';
 import Library from "./pages/Library/Library";
-
 
 class App extends Component {
   componentDidMount = () => {
@@ -53,6 +53,11 @@ class App extends Component {
                   library
                 </Link>
               </li>
+              <li>
+                <Link to="/scrap">
+                  scrap
+                </Link>
+              </li>
             </ul>
           </nav>
           <div>
@@ -62,6 +67,7 @@ class App extends Component {
             <Route exact path="/trip" component={Trip} /> 
             <Route path="/trip/:tripKey" component={TripDetail} /> 
             <Route path="/library" component={Library} />
+            <Route path="/scrap" component={Scrap} />
           </div>
         </div>
       </BrowserRouter>
