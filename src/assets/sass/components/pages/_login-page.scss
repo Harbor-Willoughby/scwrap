@@ -1,0 +1,17 @@
+#login {
+	.column {
+	background: red;
+	}
+	.login-form {
+		background: white;
+	}
+	.login-message {
+		background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff);
+	}
+	height: 100vh;
+	background: url('assets/images/01_login_01_bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; // Prevents animation/transition "flicker" on page load.
+}
