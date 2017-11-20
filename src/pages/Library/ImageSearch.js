@@ -1,5 +1,4 @@
 import React from 'react'
-import firebase from '../../firebase';
 import ReactDOM from 'react-dom';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';

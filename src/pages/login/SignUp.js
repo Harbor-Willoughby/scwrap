@@ -29,10 +29,10 @@ class SignUp extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   createEmailUser: (email, password) => dispatch(createEmailUser(email, password)),
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
