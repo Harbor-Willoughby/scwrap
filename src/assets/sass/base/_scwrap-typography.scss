@@ -58,6 +58,14 @@ h6 {
 	font-size: 0.7rem;
 }
 
+.scwrap-exclamination {
+	font-family: Spoqa Han Sans !important;
+	font-style: italic;
+}
+.period {
+	font-family: Spoqa Han Sans !important;
+}
+
 @include breakpoint(small) {
 	p {
 		&.major {
