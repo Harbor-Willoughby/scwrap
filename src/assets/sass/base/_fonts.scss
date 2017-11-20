@@ -41,3 +41,35 @@
     url('assets/fonts/Gotham/GothamBlack.ttf') format('truetype');
 }
 
+/**
+ *  Scwrap Icon
+ */
+@font-face {
+  font-family: 'scwrap-icon';
+  src:
+    url('assets/fonts/scwrap-icon/scwrap-icon.ttf?unsami') format('truetype'),
+    url('assets/fonts/scwrap-icon/scwrap-icon.woff?unsami') format('woff'),
+    url('assets/fonts/scwrap-icon/scwrap-icon.svg?unsami#scwrap-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.scwrap-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'scwrap-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scwrap-icon-scwrap:before {
+  content: "\e900";
+}
+
