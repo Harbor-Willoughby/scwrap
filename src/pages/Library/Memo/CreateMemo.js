@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import firebase from '../../../firebase';
+import {connect} from "react-redux";
 
 
 class CreateMemo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      memo_text: ""
+      memo_text: "",
+      trip_key: ""
     }
   }
 
@@ -17,12 +19,19 @@ class CreateMemo extends Component {
 
   handleClick() {
     console.log("this.state", this.state.memo_text);
-    return (
-      firebase.database().ref('/memos').set({
-        content: this.state.memo_text
+    console.log('uid',this.props.uid );
+    firebase.database().ref('/users/' + this.props.uid + '/trips').on('value', snapshot => {
+      const trip_key_value = snapshot.val();
+      console.log("value", JSON.stringify(trip_key_value));
+      const trip_key = JSON.stringify(trip_key_value).split('"')[1];
+      console.log("key", trip_key);
+      firebase.database().ref('/memos').push({
+        tid: trip_key,
+        text: this.state.memo_text,
+        // uid: this.props.uid
       })
-    )
-  }
+    });
+  };
 
   render() {
     const style = {
@@ -37,5 +46,9 @@ class CreateMemo extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  uid: state.auth.uid,
+});
 
-export default CreateMemo;
+
+export default connect(mapStateToProps)(CreateMemo);
