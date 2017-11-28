@@ -27,8 +27,8 @@ class Login extends React.Component {
       <div className="hero-body">
         <div className="container login-box">
           <div className="columns">
-            <div className="column login-form">
-              <div className="hero-body">
+            <div className="column login-form is-5">
+              <div className="login-form-inner">
                 <div>
                   <SimpleLogin />
                   <LoginForm />
@@ -37,12 +37,12 @@ class Login extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="column login-message hero is-three-fifths">
+            <div className="column login-message hero is-7">
               <div className="hero-body">
                 <div className="container">
-                  <h2><span className="hello">안녕하세요<span class="scwrap-exclamination">!</span></span></h2>
-                  <h2><span className="nicetomeetyou">처음 뵙겠습니다<span class="period">.</span></span></h2>
-                  <p><span class="scwrap-icon scwrap-icon-scwrap"></span> 의 회원이 되어주세요<span class="scwrap-exclamination">!</span></p>
+                  <h2><span className="hello">안녕하세요<span className="scwrap-exclamination">!</span></span></h2>
+                  <h2><span className="nicetomeetyou">처음 뵙겠습니다<span className="period">.</span></span></h2>
+                  <p><span className="scwrap-icon scwrap-iconic-logo"></span> 의 회원이 되어주세요<span className="scwrap-exclamination">!</span></p>
                   { this.state.isCreateEmailUser ? 
                   <SignUp onComplete={this.showFinishEmailUser} />
                   : <button className="signup" onClick={this.showSignUpForm}>Sign up</button> 

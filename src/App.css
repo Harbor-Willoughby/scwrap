@@ -2544,7 +2544,7 @@ h6 {
  */
 @font-face {
   font-family: 'scwrap-icon';
-  src: url("assets/fonts/scwrap-icon/scwrap-icon.ttf?unsami") format("truetype"), url("assets/fonts/scwrap-icon/scwrap-icon.woff?unsami") format("woff"), url("assets/fonts/scwrap-icon/scwrap-icon.svg?unsami#scwrap-icon") format("svg");
+  src: url("assets/fonts/scwrap-icon/scwrap-icon.ttf?300xh6") format("truetype"), url("assets/fonts/scwrap-icon/scwrap-icon.woff?300xh6") format("woff"), url("assets/fonts/scwrap-icon/scwrap-icon.svg?300xh6#scwrap-icon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -2561,7 +2561,58 @@ h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.scwrap-icon-scwrap:before {
+.scwrap-iconic-view:before {
+  content: "\e901";
+  color: #fff; }
+
+.scwrap-iconic-down:before {
+  content: "\e902";
+  color: #fff; }
+
+.scwrap-iconic-rectangle:before {
+  content: "\e903";
+  color: #f2f2f2; }
+
+.scwrap-iconic-shape:before {
+  content: "\e904";
+  color: #fff; }
+
+.scwrap-iconic-add .path1:before {
+  content: "\e905";
+  color: #ba78ff; }
+
+.scwrap-iconic-add .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: white; }
+
+.scwrap-iconic-close-login:before {
+  content: "\e907";
+  color: #fff; }
+
+.scwrap-iconic-calendar:before {
+  content: "\e908";
+  color: #ef6565; }
+
+.scwrap-iconic-confirm .path1:before {
+  content: "\e909";
+  color: white; }
+
+.scwrap-iconic-confirm .path2:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: #c1c1c1; }
+
+.scwrap-iconic-confirm .path3:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: #ba78ff; }
+
+.scwrap-iconic-profile:before {
+  content: "\e90c";
+  color: #d61212; }
+
+.scwrap-iconic-logo:before {
   content: "\e900"; }
 
 input {
@@ -2713,12 +2764,11 @@ button,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-  #login .column {
-    background: red; }
   #login .hero-body {
     height: 100%; }
   #login .login-form {
-    background: white; }
+    background: white;
+    padding: 3.215rem 2.679rem 2.679rem 2.679rem; }
   #login .login-message {
     background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff); }
     #login .login-message .container {
@@ -2734,17 +2784,18 @@ button,
       #login .login-message .container button {
         margin-top: 2.125rem;
         width: 11.5rem; }
-  #login .login-box {
-    max-width: 70vw; }
   #login button {
     width: 100%;
     font-size: 1.33rem;
-    padding: 0 2.9rem;
+    padding: 0;
     line-height: 3.3rem;
     height: 3.3rem;
     font-weight: 400; }
     #login button span {
       font-weight: 700; }
+  @media screen and (max-width: 980px) {
+    #login {
+      background: blue; } }
 
 .login-title {
   color: #333333; }
