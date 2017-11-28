@@ -6,3 +6,30 @@
 	-o-background-size: cover;
 	background-size: cover;
 }
+
+// Sacrap Demo
+#scrap-demo {
+	height: 100vh;
+	background: url('assets/images/03_scrap_01_bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+
+
+
+	.grid {
+		// display: flex;
+		// flex-wrap: wrap;
+		// align-content: stretch;
+		// height: 100%;
+		// .box {
+		// 	width: 30%;
+		// }
+		.image {
+			// max-width: 100%;
+			// max-height: 100%;
+		}
+	}
+}
