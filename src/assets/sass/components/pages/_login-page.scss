@@ -1,12 +1,10 @@
 #login {
-	.column {
-	background: red;
-	}
 	.hero-body {
 		height: 100%;
 	}
 	.login-form {
 		background: white;
+		padding: 3.215rem 2.679rem 2.679rem 2.679rem;
 	}
 	.login-message {
 		background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff);
@@ -28,9 +26,6 @@
 			}
 		}
 	}
-	.login-box {
-		max-width: 70vw;
-	}
 	height: 100vh;
 	background: url('assets/images/01_login_01_bg.jpg') no-repeat center center;
 	-webkit-background-size: cover;
@@ -40,7 +35,7 @@
 	button {
 		width: 100%;
 		font-size: 1.33rem;
-		padding: 0 2.9rem;
+		padding: 0;
 		line-height: 3.3rem;
 		height: 3.3rem;
 		font-weight: 400;
@@ -48,10 +43,15 @@
 			font-weight: 700;
 		}
 	}
+	@include breakpoint(medium) {
+		background: blue;
+	}
 }
+
 .login-title {
 	color: _palette(fg-bold);
 }
+
 #loginEmailForm {
 	input {
 		color: #E2E2E2;
@@ -84,10 +84,12 @@
 		margin-top: 1.5rem;
 	}
 }
-	.hello {
-		font-size: 3.5rem;
-	}
-	.nicetomeetyou {
-		font-size: 3.5rem;
-		font-weight: 300;
-	}
+
+.hello {
+	font-size: 3.5rem;
+}
+
+.nicetomeetyou {
+	font-size: 3.5rem;
+	font-weight: 300;
+}
