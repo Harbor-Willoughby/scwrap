@@ -2793,6 +2793,12 @@ button,
     font-weight: 400; }
     #login button span {
       font-weight: 700; }
+  #login .scwrap-iconic-close-login {
+    position: absolute;
+    top: 1.178rem;
+    right: 1.178rem;
+    font-size: 1.446rem;
+    cursor: pointer; }
   @media screen and (max-width: 980px) {
     #login {
       background: blue; } }

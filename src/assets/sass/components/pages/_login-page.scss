@@ -43,6 +43,13 @@
 			font-weight: 700;
 		}
 	}
+	.scwrap-iconic-close-login {
+		position: absolute;
+		top: 1.178rem;
+		right: 1.178rem;
+		font-size: 1.446rem;
+		cursor: pointer;
+	}
 	@include breakpoint(medium) {
 		background: blue;
 	}
