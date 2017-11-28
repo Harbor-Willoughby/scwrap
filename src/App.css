@@ -2803,7 +2803,7 @@ button,
     background: white;
     padding: 3.215rem 2.679rem 2.679rem 2.679rem; }
   #login .login-message {
-    background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff); }
+    background-image: linear-gradient(318deg, #7136af, #8878ff); }
     #login .login-message .container {
       text-align: right; }
       #login .login-message .container p {
