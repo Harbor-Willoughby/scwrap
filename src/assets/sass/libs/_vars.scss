@@ -40,22 +40,13 @@ kerning: -0.05em,
 kerning-alt: 0.125em);
 
 // Palette.
-$palette: ( color1: #5f2a63,
-color2: #db8992,
-color3: #ab7aad,
-color4: #897cad,
-color5: #7794ce,
-color6: #64abb4,
-color7: #6ba78c,
+$palette: ( color1: #0389f1,
 
 bg: #ffffff,
 bg-alt: #eeeeee,
 fg: #fff,
 fg-bold: #333333,
 fg-light: #fffbfa,
-border: rgba(0, 0, 0, 0.2),
-border-alt: rgba(0, 0, 0, 0.075),
-border-bg: rgba(0, 0, 0, 0.05),
 accent: #47D3E5,
 
 invert: ( bg: #000000,
@@ -63,8 +54,5 @@ bg-alt: #222222,
 fg: #8e88ff,
 fg-bold: #ba78ff,
 fg-light: #ffffff,
-border: rgba(255, 255, 255, 1.0),
-border-alt: rgba(255, 255, 255, 0.125),
-border-bg: rgba(255, 255, 255, 0.125),
 accent: #47D3E5),
 );

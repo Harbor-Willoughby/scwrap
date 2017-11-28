@@ -1418,6 +1418,69 @@
   .columns.is-variable.is-8 {
     --columnGap: 2rem; }
 
+.tile {
+  align-items: stretch;
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-height: min-content; }
+  .tile.is-ancestor {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem; }
+    .tile.is-ancestor:last-child {
+      margin-bottom: -0.75rem; }
+    .tile.is-ancestor:not(:last-child) {
+      margin-bottom: 0.75rem; }
+  .tile.is-child {
+    margin: 0 !important; }
+  .tile.is-parent {
+    padding: 0.75rem; }
+  .tile.is-vertical {
+    flex-direction: column; }
+    .tile.is-vertical > .tile.is-child:not(:last-child) {
+      margin-bottom: 1.5rem !important; }
+  @media screen and (min-width: 769px), print {
+    .tile:not(.is-child) {
+      display: flex; }
+    .tile.is-1 {
+      flex: none;
+      width: 8.33333%; }
+    .tile.is-2 {
+      flex: none;
+      width: 16.66667%; }
+    .tile.is-3 {
+      flex: none;
+      width: 25%; }
+    .tile.is-4 {
+      flex: none;
+      width: 33.33333%; }
+    .tile.is-5 {
+      flex: none;
+      width: 41.66667%; }
+    .tile.is-6 {
+      flex: none;
+      width: 50%; }
+    .tile.is-7 {
+      flex: none;
+      width: 58.33333%; }
+    .tile.is-8 {
+      flex: none;
+      width: 66.66667%; }
+    .tile.is-9 {
+      flex: none;
+      width: 75%; }
+    .tile.is-10 {
+      flex: none;
+      width: 83.33333%; }
+    .tile.is-11 {
+      flex: none;
+      width: 91.66667%; }
+    .tile.is-12 {
+      flex: none;
+      width: 100%; } }
+
 /* Reset */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -2415,8 +2478,7 @@ body {
   width: device-width; }
 
 body {
-  -ms-overflow-style: scrollbar;
-  overflow-x: hidden; }
+  -ms-overflow-style: scrollbar; }
 
 @media screen and (max-width: 480px) {
   html,
@@ -2487,6 +2549,9 @@ h6 {
 
 .period {
   font-family: Spoqa Han Sans !important; }
+
+a {
+  word-break: break-all; }
 
 @media screen and (max-width: 736px) {
   p.major {
@@ -2803,7 +2868,7 @@ button,
     background: white;
     padding: 3.215rem 2.679rem 2.679rem 2.679rem; }
   #login .login-message {
-    background-image: linear-gradient(318deg, #094fc2, #7136af, #8878ff); }
+    background-image: linear-gradient(318deg, #7136af, #8878ff); }
     #login .login-message .container {
       text-align: right; }
       #login .login-message .container p {
@@ -2878,3 +2943,28 @@ button,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
+#scrap-demo {
+  height: 100vh;
+  background: url("assets/images/03_scrap_01_bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  #scrap-demo .grid .text {
+    background: white;
+    text-align: left; }
+  #scrap-demo .grid h1 {
+    font-size: 1.05rem;
+    color: #121212;
+    font-weight: 700; }
+  #scrap-demo .grid p {
+    font-family: Spoqa Han Sans;
+    font-size: 0.841rem;
+    color: #121212;
+    font-weight: 300; }
+  #scrap-demo .grid a {
+    font-family: Spoqa Han Sans;
+    font-size: 0.841rem;
+    color: #0389f1;
+    font-weight: 300; }
