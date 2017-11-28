@@ -2675,9 +2675,6 @@ button,
   input[type="button"].fit,
   button.fit,
   .button.fit {
-    font-size: 2.25rem;
-    height: 2em;
-    line-height: 2em;
     border-radius: 3px;
     width: 100%; }
 
@@ -2725,16 +2722,21 @@ button,
     -ms-transition: none !important;
     transition: none !important; }
 
-.main-nav {
-  height: 96px;
-  width: 100%;
-  z-index: 2; }
-  .main-nav .scwrap-logo {
-    float: left;
-    font-size: 2rem; }
-  .main-nav .scwrap-profile {
-    float: right;
-    font-size: 2rem; }
+.main-nav .scwrap-iconic-logo {
+  float: left;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: 2.041rem;
+  margin-top: 1.416rem; }
+
+.main-nav .scwrap-iconic-profile {
+  float: right;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-right: 2.041rem;
+  margin-top: 1.416rem; }
+  .main-nav .scwrap-iconic-profile:before {
+    color: white; }
 
 .main-content {
   color: #fff;
@@ -2742,20 +2744,51 @@ button,
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 100vh;
+  padding-bottom: 10.08rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between; }
   .main-content h1 {
-    margin-top: 200px; }
+    font-size: 3.154rem; }
+  .main-content button {
+    font-size: 1.33rem;
+    line-height: 3rem;
+    height: 3rem;
+    margin-top: 1.5rem; }
+  .main-content .container .scwrap-iconic-logo {
+    font-size: 3.85rem; }
 
 .new-trip {
-  max-width: 500px;
+  max-width: 27.83rem;
   margin: 96px auto 0 auto; }
   .new-trip input {
     display: block;
     margin-left: auto;
-    margin-right: auto; }
-  @media screen and (max-width: 736px) {
-    .new-trip {
-      max-width: 400px; } }
+    margin-right: auto;
+    font-size: 1.5rem;
+    padding: 0.833rem 0;
+    margin-bottom: 1rem; }
+  .new-trip .inner-addon {
+    position: relative; }
+    .new-trip .inner-addon .scwrap-icon {
+      position: absolute;
+      font-size: 1.583rem;
+      cursor: pointer;
+      height: 3.165rem;
+      line-height: 3.165rem; }
+      .new-trip .inner-addon .scwrap-icon:before {
+        color: white; }
+  .new-trip .left-addon .scwrap-icon {
+    left: 0px; }
+  .new-trip .right-addon .scwrap-icon {
+    right: 2.208rem; }
+  .new-trip .left-addon input {
+    padding-left: 1.583rem; }
+  .new-trip .right-addon input {
+    padding-right: 1.583rem; }
 
 #login {
   height: 100vh;
@@ -2795,8 +2828,8 @@ button,
       font-weight: 700; }
   #login .scwrap-iconic-close-login {
     position: absolute;
-    top: 1.178rem;
-    right: 1.178rem;
+    top: 0.916rem;
+    right: 0.916rem;
     font-size: 1.446rem;
     cursor: pointer; }
   @media screen and (max-width: 980px) {
