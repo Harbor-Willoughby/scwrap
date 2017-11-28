@@ -39,6 +39,7 @@ class Login extends React.Component {
             </div>
             <div className="column login-message hero is-7">
               <div className="hero-body">
+                <span className="scwrap-icon scwrap-iconic-close-login"></span>
                 <div className="container">
                   <h2><span className="hello">안녕하세요<span className="scwrap-exclamination">!</span></span></h2>
                   <h2><span className="nicetomeetyou">처음 뵙겠습니다<span className="period">.</span></span></h2>
