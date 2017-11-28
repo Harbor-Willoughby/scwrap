@@ -23,11 +23,11 @@ export default class ScrapDemo extends Component {
               <img className="image" src={img1} />
           </div>
           <div className="tile is-vertical">
-            <div className="box tile">
+            <div className="box tile link">
               <img className="image" src={img2} />
-              <div>
+              <div className="text">
                 <h1>빨간지붕 마을</h1>
-                <p><a href="https://github.com/storybooks/storybook">https://github.com/storybooks/storybook</a></p>
+                <a href="https://github.com/storybooks/storybook">https://github.com/storybooks/storybook</a>
               </div>
             </div>
             <div className="box tile">
@@ -39,8 +39,8 @@ export default class ScrapDemo extends Component {
               <img className="image" src={img4} />
               <img className="image" src={img5} />
             </div>
-            <div className="box tile">
-               <div>
+            <div className="box tile memo">
+               <div className="text">
                  <h1>오랑주리 미술관</h1>
                  <p>여행자가 된 화가의 미술관 산책 여행자가 된 화가의 미술관 산책 </p>
                  <p>‘화가가 사랑한 파리 미술관’</p>

@@ -2951,3 +2951,20 @@ button,
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  #scrap-demo .grid .text {
+    background: white;
+    text-align: left; }
+  #scrap-demo .grid h1 {
+    font-size: 1.05rem;
+    color: #121212;
+    font-weight: 700; }
+  #scrap-demo .grid p {
+    font-family: Spoqa Han Sans;
+    font-size: 0.841rem;
+    color: #121212;
+    font-weight: 300; }
+  #scrap-demo .grid a {
+    font-family: Spoqa Han Sans;
+    font-size: 0.841rem;
+    color: #0389f1;
+    font-weight: 300; }
