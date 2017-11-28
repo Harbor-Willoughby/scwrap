@@ -20,8 +20,8 @@ export default class Box extends React.Component {
   memo(title, text) {
     return (
     <dl className="memo">
-        <dt clssName="title">{title}</dt>
-        <dd clssName="text">{text}</dd>
+        <dt className="title">{title}</dt>
+        <dd className="text">{text}</dd>
     </dl>
     );
   }

@@ -2870,3 +2870,11 @@ button,
 .nicetomeetyou {
   font-size: 3.5rem;
   font-weight: 300; }
+
+#scrap {
+  height: 100vh;
+  background: url("assets/images/03_scrap_01_bg.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
