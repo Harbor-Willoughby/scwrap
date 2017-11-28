@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
        <form id="loginEmailForm">
         <input type="text" placeholder="Email" name="email" />
         <input type="password" placeholder="Password" name="password" />
-        <input type="submit" value="Login" onClick={this.submitEmailForm} />
+        <button type="submit" value="Login" onClick={this.submitEmailForm}>Login</button>
         </form>
       </section>
     );
