@@ -7,6 +7,7 @@ import LoginForm from './LoginForm';
 import Loggedin from './Loggedin';
 import SignUp from './SignUp';
 import Finish from './Finish';
+import TopNav from '../../shared/top-nav';
 
 class Login extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Login extends React.Component {
   render() {
     return (
       <div id="login" className="hero is-fullheight">
+      <TopNav/>
       <div className="hero-body">
         <div className="container login-box">
           <div className="columns">
