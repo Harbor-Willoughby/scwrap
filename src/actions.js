@@ -36,3 +36,7 @@ export const logoutUser = () => ({
   type: 'LOGOUT_USER',
 });
 
+export const testFirebase = () => ({
+  type: 'TEST_FIREBASE',
+});
+

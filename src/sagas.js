@@ -57,6 +57,10 @@ function logoutUser() {
   return auth.signOut();
 }
 
+function  testFirebase() {
+  console.log("TEST FIREBASE");
+}
+
 function* mySaga() {
   yield takeEvery("LOGIN_GOOGLE_USER_REQUEST", ()=>loginWithProvider(googleProvider));
   yield takeEvery("LOGIN_FACEBOOK_USER_REQUEST", ()=>loginWithProvider(facebookProvider));
@@ -64,6 +68,7 @@ function* mySaga() {
   yield takeEvery("CREATE_EMAIL_USER_REQUEST", createWithEmailProvider);
   yield takeEvery("CHECK_AUTH_STATE_CHANGED", checkAuthStateChanged);
   yield takeEvery("LOGOUT_USER", logoutUser);
+  yield takeEvery("TEST_FIREBASE", testFirebase);
 }
 
 export default mySaga;
