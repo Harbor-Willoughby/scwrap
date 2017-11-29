@@ -1,5 +1,4 @@
 import React from 'react'
-import firebase from '../../firebase';
 import ReactDOM from 'react-dom';
 import map from 'lodash/map';
 import isEmpty from 'lodash/isEmpty';
@@ -19,7 +18,19 @@ class Search extends React.Component {
     };
   }
 
-  searchImage() {
+  searchNextPage() {
+    this.setState({page: this.state.page + 10}, () => {
+        this.searchImage()
+      });
+  }
+
+  searchPrevPage() {
+    this.setState({page: this.state.page - 10}, () => {
+      this.searchImage()
+    });
+  }
+
+  searchImages() {
     const searchDOM = ReactDOM.findDOMNode(this.refs.search);
     let text = searchDOM.value.trim();
     let page = this.state.page;
@@ -51,18 +62,6 @@ class Search extends React.Component {
         });
       });
   };
-
-  searchNextPage() {
-    this.setState({page: this.state.page + 10}, () => {
-        this.searchImage()
-      });
-  }
-
-  searchPrevPage() {
-    this.setState({page: this.state.page - 10}, () => {
-      this.searchImage()
-    });
-  }
 
   saveImages() {
     const value = document.getElementsByName('check_photo');
@@ -121,7 +120,7 @@ class Search extends React.Component {
         Search
         <div id="gsearch">
           <input type="text" ref="search" placeholder="검색어 입력" />
-          <button onClick={()=>this.searchImage()}>검색</button>
+          <button onClick={()=>this.searchImages()}>검색</button>
         </div>
         <div>
           {
@@ -145,7 +144,7 @@ class Search extends React.Component {
                             height="200"
                             alt={photo.snippet}
                           />
-                          <input type="checkbox" name="check_photo" value={photo.id}/>
+                          <input type="checkbox" name="check_photo" ref="checkbox" value={photo.id}/>
                         </div>
                       )
                     })

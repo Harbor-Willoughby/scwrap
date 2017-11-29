@@ -15,10 +15,10 @@ export default class Indicator extends React.Component {
 
   button(page, isSelected) {
     let pageText = isSelected ? "page" + page + " (selected)" : "page" + page;
-    
+
     return (<button key={page}><img src="" alt={pageText} onClick={()=>this.onSelect(page)} /></button>);
   }
-  
+
   render() {
     return (
       <div id="indicator">
