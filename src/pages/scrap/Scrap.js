@@ -6,6 +6,7 @@ import _ from 'lodash';
 import Indicator from './Indicator';
 import Day from './Day';
 import Grid from './Grid';
+import TopNav from '../../shared/top-nav';
 
 const pictureDummy = {
     type: "picture",
@@ -38,6 +39,7 @@ class Scrap extends React.Component {
   render() {
     return (
       <div id="scrap">
+        <TopNav/>
         <Day tripDay="1" year="2017" month="10" day="20" />
         <Indicator page={3} current={1} />
         <section id="trip">

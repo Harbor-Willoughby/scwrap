@@ -1,0 +1,43 @@
+#scrap {
+	height: 100vh;
+	background: url('assets/images/03_scrap_01_bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+// Sacrap Demo
+#scrap-demo {
+	height: 100vh;
+	background: url('assets/images/03_scrap_01_bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	.grid {
+		.text {
+			background: white;
+			text-align: left;
+		}
+		h1 {
+			font-size: 1.05rem;
+			color: #121212;
+			font-weight: 700;
+		}
+		p {
+			font-family: Spoqa Han Sans;
+			font-size: 0.841rem;
+			color: #121212;
+			font-weight: 300;
+		}
+		a {
+			font-family: Spoqa Han Sans;
+			font-size: 0.841rem;
+			color: #0389f1;
+			font-weight: 300;
+		}
+
+	}
+}

@@ -66,6 +66,10 @@ h6 {
 	font-family: Spoqa Han Sans !important;
 }
 
+a {
+	word-break: break-all;
+}
+
 @include breakpoint(small) {
 	p {
 		&.major {

@@ -8,8 +8,7 @@
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover; // Prevents animation/transition "flicker" on page load.
-	// Automatically added/removed by js/main.js.
+	background-size: cover;
 	&.is-loading {
 		*,
 		*:before,
@@ -22,16 +21,22 @@
 	}
 }
 .main-nav {
-	height: 96px;
-	width: 100%;
-	z-index: 2;
-	.scwrap-logo {
+	.scwrap-iconic-logo {
 		float:left;
 		font-size:2rem;
+		cursor: pointer;
+		margin-left: 2.041rem;
+		margin-top: 1.416rem;
 	}
-	.scwrap-profile {
+	.scwrap-iconic-profile {
 		float:right;
 		font-size:2rem;
+		cursor: pointer;
+		&:before {
+			color: white;
+		}
+		margin-right: 2.041rem;
+		margin-top: 1.416rem;
 	}
 }
 .main-content {
@@ -42,18 +47,54 @@
 	-o-background-size: cover;
 	background-size: cover;
 	h1 {
-		margin-top: 200px;
+		font-size: 3.154rem;
+	}
+	min-height: 100vh;
+	padding-bottom: 10.08rem;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: space-between;
+	button {
+		font-size: 1.33rem;
+		line-height: 3rem;
+		height: 3rem;
+		margin-top: 1.5rem;
+	}
+	.container .scwrap-iconic-logo {
+		font-size: 3.85rem;
 	}
 }
 .new-trip {
-	max-width: 500px;
+	max-width: 27.83rem;
 	margin: 96px auto 0 auto;
 	input {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		font-size: 1.5rem;
+		padding: 0.833rem 0;
+		margin-bottom: 1rem;
 	}
-	@include breakpoint(small) {
-		max-width: 400px;
+
+	// enable absolute positioning
+	.inner-addon {
+		position: relative;
+		.scwrap-icon {
+			position: absolute;
+			font-size: 1.583rem;
+			cursor: pointer;
+			// vertical align
+			height: 3.165rem;
+			line-height: 3.165rem;
+			&:before {
+				color: white;
+			}
+		}
 	}
+	.left-addon .scwrap-icon  {left:  0px;}
+	.right-addon .scwrap-icon { right: 2.208rem; }
+	.left-addon input  { padding-left: 1.583rem; }
+	.right-addon input { padding-right: 1.583rem; }
+
 }

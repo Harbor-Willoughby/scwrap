@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Main from './pages/Main';
 import Login from './pages/login/Login';
 import Scrap from './pages/scrap/Scrap';
+import ScrapDemo from './pages/scrap-demo/Scrap-Demo';
 import MyPage from './pages/MyPage';
 import Trip from './stories/trip/trip';
 import TripDetail from './stories/trip/trip-detail';
@@ -58,6 +59,11 @@ class App extends Component {
                   scrap
                 </Link>
               </li>
+              <li>
+                <Link to="/scrap-demo">
+                  scrap-demo
+                </Link>
+              </li>
             </ul>
           </nav>
           <div>
@@ -68,6 +74,7 @@ class App extends Component {
             <Route path="/trip/:tripKey" component={TripDetail} /> 
             <Route path="/library" component={Library} />
             <Route path="/scrap" component={Scrap} />
+            <Route path="/scrap-demo" component={ScrapDemo} />
           </div>
         </div>
       </BrowserRouter>
