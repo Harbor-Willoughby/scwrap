@@ -8,6 +8,7 @@ class CreateMemo extends Component {
     super(props);
     this.state = {
       memo_text: "",
+      trip_key: ""
     }
   }
 
@@ -36,8 +37,7 @@ class CreateMemo extends Component {
     //   });
     // });
   }
-
-    render() {
+  render() {
     const style = {
       resize: "None"
     };
@@ -53,5 +53,6 @@ class CreateMemo extends Component {
 const mapStateToProps = (state) => ({
   uid: state.auth.uid
 });
+
 
 export default connect(mapStateToProps)(CreateMemo);

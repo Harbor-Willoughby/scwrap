@@ -5,7 +5,7 @@ const DEFAULT_STATE = {
   profileImageUrl: '',
   isLoggingIn: false, // 로그인 진행중일 떄 진행중 표시를 하기 위한 Flag
   errorState: '', // 로그인 중에 문제가 생겼습니다 라고 알리기 위한 Flag
-}
+};
 
 const authReducer = (state = DEFAULT_STATE, action) => {
   if (action.type === 'LOGIN_USER_REQUEST') {
@@ -48,6 +48,6 @@ const authReducer = (state = DEFAULT_STATE, action) => {
   return {
     ...state,
   }
-}
+};
 
 export default authReducer;
