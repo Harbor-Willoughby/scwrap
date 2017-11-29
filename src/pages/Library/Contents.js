@@ -6,7 +6,7 @@ import Memo from "./Memo/Memo";
 
 class Contents extends Component {
   render() {
-    const { type } = this.props;
+    const { type, tripKey } = this.props;
     if (type === 'imageUpload') {
       return (
         <ImageUpload />
@@ -17,7 +17,7 @@ class Contents extends Component {
       )
     } else if (type === 'memo') {
       return (
-        <Memo />
+        <Memo tripKey={tripKey}/>
       )
     }
   }

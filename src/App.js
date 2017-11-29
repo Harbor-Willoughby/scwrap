@@ -71,8 +71,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/mypage" component={MyPage} />
             <Route exact path="/trip" component={Trip} /> 
-            <Route path="/trip/:tripKey" component={TripDetail} /> 
-            <Route path="/library" component={Library} />
+            <Route exact path="/trip/:tripKey" component={TripDetail} />
             <Route path="/scrap" component={Scrap} />
             <Route path="/scrap-demo" component={ScrapDemo} />
           </div>

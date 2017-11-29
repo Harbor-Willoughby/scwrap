@@ -116,6 +116,6 @@ Trip.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => ({
   uid: state.auth.uid
-})
+});
 
 export default connect(mapStateToProps)(Trip);

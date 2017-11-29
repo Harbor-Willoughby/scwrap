@@ -8,10 +8,10 @@ class Memo extends Component {
     const style = {
       resize: "None"
     };
-
+    const { tripKey } = this.props;
     return (
       <div>
-        <CreateMemo style={style}/>
+        <CreateMemo style={style} tripKey={tripKey}/>
         <MemoList />
       </div>
     );
