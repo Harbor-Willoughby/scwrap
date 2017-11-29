@@ -12,7 +12,7 @@ class Memo extends Component {
     return (
       <div>
         <CreateMemo style={style} tripKey={tripKey}/>
-        <MemoList />
+        <MemoList tripKey={tripKey}/>
       </div>
     );
   }
