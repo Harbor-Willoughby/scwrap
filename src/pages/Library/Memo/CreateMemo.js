@@ -19,26 +19,24 @@ class CreateMemo extends Component {
 
   handleClick() {
     console.log("this.state", this.state.memo_text);
-    console.log('uid',this.props.uid );
-    // firebase.database().ref('/users/' + this.props.uid + '/trips').on('value', snapshot => {
-    //   const trip_key_value = snapshot.val();
-    //   console.log("value", JSON.stringify(trip_key_value));
-    //   const trip_key = JSON.stringify(trip_key_value).split('"')[1];
-    //   console.log("key", trip_key);
-    //   const new_memo = firebase.database().ref('/memos').push();
-        // tid: trip_key,
-        // text: this.state.memo_text,
-        // uid: this.props.uid
-      // const new_memo_key = new_memo.key;
-      // console.log("key", new_memo_key);
+    console.log("key", this.props.uid);
+    const user_id = this.props.uid;
+    const memo_id = firebase.database().ref('/memos').push().key;
+    const update_data = {};
+    update_data['/memos/' + memo_id] =
+    update_data['/trips/' + memo_id] =
+    console.log("memoid",memo_id)
+    // const trip_keys = firebase.database().ref('/users/' + user_id + '/trips').once('value').then((snapshot) => {
+    //   const string_keys = JSON.stringify(snapshot.val());
+    //   console.log("string",string_keys);
+    //   JSON.parse(string_keys, (key, value) => {
+    //     if (value) {
+    //       console.log("key",key);
+    //       console.log("value",value);
+    //     }
+    //   });
     // });
-    // firebase.database().ref
-    // console.log("this.state", this.state.memo_text);
-    // console.log('uid',this.props.uid );
-    const trip_key = firebase.database().ref('/users/' + this.props.uid + '/trips').on('value');
-    console.log("trip_key", trip_key);
-  };
-
+  }
   render() {
     const style = {
       resize: "None"
@@ -53,7 +51,7 @@ class CreateMemo extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  uid: state.auth.uid,
+  uid: state.auth.uid
 });
 
 
