@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import firebase from '../../firebase';
-import map from 'lodash/map';
 import { objectValue } from '../../util/objectUtill';
 import {
   connect,
