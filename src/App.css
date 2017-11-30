@@ -2987,11 +2987,13 @@ button,
       margin-left: 1.25rem; }
   #scrap-demo .grid .text {
     background: white;
-    text-align: left; }
+    text-align: left;
+    padding: 1.291rem 1.166rem; }
   #scrap-demo .grid h1 {
     font-size: 1.05rem;
     color: #121212;
-    font-weight: 700; }
+    font-weight: 700;
+    margin-bottom: 1.291rem; }
   #scrap-demo .grid p {
     font-family: Spoqa Han Sans;
     font-size: 0.841rem;
