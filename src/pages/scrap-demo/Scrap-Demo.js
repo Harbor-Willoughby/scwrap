@@ -9,8 +9,27 @@ import img6 from '../../assets/images/box-dummy-06.jpg';
 import $ from 'jquery';
 
 export default class ScrapDemo extends Component {
-  // Check Scroll Events using Jquery
   componentDidMount() {
+    // Check Scroll Events using Jquery
+    this.enableScroll();
+    // Grid Item Image Resize
+    this.ImageResize();
+  }
+  ImageResize() {
+      $(function() {
+        // Vars.
+        var $alone_item = $('.tile:not(.is-vertical) img');
+        $alone_item.each(function( index ) {
+          const naturalWidth = $( this ).prop("naturalWidth");
+          const naturalHeight = $( this ).prop("naturalHeight");
+          const currentHeight = $( this ).prop("height");
+          const ratio = naturalHeight / naturalWidth;
+          var new_width = currentHeight / ratio;
+          $( this ).width(new_width);
+        });
+      });
+  }
+  enableScroll() {
   // Settings.
     var settings = {
       // Scroll wheel.
@@ -21,10 +40,10 @@ export default class ScrapDemo extends Component {
             factor: 1
         },
     };
-        // Vars.
+      // Vars.
       var $window = $(window),
           $document = $('#scrap-demo'),
-          $body = $('#scrap-demo'),
+          $scrapWrapper = $('#scrap-demo'),
           $html = $('html'),
           $bodyHtml = $('body,html'),
           $wrapper = $('#wrapper');
@@ -101,7 +120,7 @@ export default class ScrapDemo extends Component {
         };
 
       // Wheel event.
-        $body.on('wheel', function(event) {
+        $scrapWrapper.on('wheel', function(event) {
 
           // Disable on <=small.
             // if (skel.breakpoint('small').active)
@@ -137,7 +156,23 @@ export default class ScrapDemo extends Component {
           </div>
           <div className="grid tile is-ancestor">
             <div className="tile">
-                <img className="image" src={img1} />
+                 <img  src={img4} />
+            </div>
+            <div className="tile is-vertical">
+              <div className="tile">
+                   <img  src={img4} />
+              </div>
+              <div className="tile">
+                   <img  src={img3} />
+              </div>
+            </div>
+            <div className="tile is-vertical">
+              <div className="tile">
+                   <img  src={img3} />
+              </div>
+              <div className="tile">
+                   <img  src={img4} />
+              </div>
             </div>
             <div className="tile is-vertical">
               <div className="box tile link">
