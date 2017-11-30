@@ -18,15 +18,32 @@ export default class ScrapDemo extends Component {
   ImageResize() {
       $(function() {
         // Vars.
-        var $alone_item = $('.tile:not(.is-vertical) img');
+        var $alone_item = $('.tile.alone img');
         $alone_item.each(function( index ) {
           const naturalWidth = $( this ).prop("naturalWidth");
           const naturalHeight = $( this ).prop("naturalHeight");
           const currentHeight = $( this ).prop("height");
           const ratio = naturalHeight / naturalWidth;
           var new_width = currentHeight / ratio;
+          // var new_height = currentHeight * 0.5;
           $( this ).width(new_width);
+          // $( this ).width(new_height);
         });
+        var $not_alone_tile = $('.tile.is-vertical');
+        $not_alone_tile.each(function( index ) {
+            const box_img_1 = $( this ).find( ".box:nth-child(1):not(.link) img" );
+            const box_img_2 = $( this ).find( ".box:nth-child(2):not(.link) img" );
+            if (box_img_1.width() < box_img_2.width()) {
+              box_img_1.width('100%');
+              box_img_1.height('100%');
+              box_img_2.height(300);
+            } else if(box_img_1.width() >= box_img_2.width()) {
+              box_img_2.width('100%');
+              box_img_2.height('100%');
+              box_img_1.height(300);
+            }
+        });
+
       });
   }
   enableScroll() {
@@ -155,22 +172,22 @@ export default class ScrapDemo extends Component {
             </div>
           </div>
           <div className="grid tile is-ancestor">
-            <div className="tile">
+            <div className="box tile alone">
                  <img  src={img4} />
             </div>
             <div className="tile is-vertical">
-              <div className="tile">
+              <div className="box tile">
                    <img  src={img4} />
               </div>
-              <div className="tile">
+              <div className="box tile">
                    <img  src={img3} />
               </div>
             </div>
             <div className="tile is-vertical">
-              <div className="tile">
+              <div className="box tile">
                    <img  src={img3} />
               </div>
-              <div className="tile">
+              <div className="box tile">
                    <img  src={img4} />
               </div>
             </div>
@@ -203,7 +220,7 @@ export default class ScrapDemo extends Component {
                 <img className="image" src={img6} />
               </div>
             </div>
-            <div className="tile">
+            <div className="box tile alone">
                 <img className="image" src={img1} />
             </div>
             <div className="tile is-vertical">

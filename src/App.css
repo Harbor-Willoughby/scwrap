@@ -3004,5 +3004,7 @@ button,
     font-size: 0.841rem;
     color: #0389f1;
     font-weight: 300; }
-  #scrap-demo .is-vertical .tile:not(.link):nth-of-type(1) {
+  #scrap-demo .tile:not(.is-vertical) {
     background: red; }
+  #scrap-demo .is-vertical .box:not(.link) {
+    background: green; }
