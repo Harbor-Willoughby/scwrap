@@ -6,8 +6,124 @@ import img3 from '../../assets/images/box-dummy-03.jpg';
 import img4 from '../../assets/images/box-dummy-04.jpg';
 import img5 from '../../assets/images/box-dummy-05.jpg';
 import img6 from '../../assets/images/box-dummy-06.jpg';
+import $ from 'jquery';
 
 export default class ScrapDemo extends Component {
+  // Check Scroll Events using Jquery
+  componentDidMount() {
+  // Settings.
+    var settings = {
+      // Scroll wheel.
+        scrollWheel: {
+          // If true, enables scrolling via the scroll wheel.
+            enabled: true,
+          // Sets the scroll wheel factor. (Ideally) a value between 0 and 1 (lower = slower scroll, higher = faster scroll).
+            factor: 1
+        },
+    };
+        // Vars.
+      var $window = $(window),
+          $document = $('#scrap-demo'),
+          $body = $('#scrap-demo'),
+          $html = $('html'),
+          $bodyHtml = $('body,html'),
+          $wrapper = $('#wrapper');
+
+      // Based on code by @miorel + @pieterv of Facebook (thanks guys :)
+      // github.com/facebook/fixed-data-table/blob/master/src/vendor_upstream/dom/normalizeWheel.js
+      var normalizeWheel = function(event) {
+
+        var pixelStep = 10,
+            lineHeight = 40,
+            pageHeight = 800,
+            sX = 0,
+            sY = 0,
+            pX = 0,
+            pY = 0;
+
+          // Legacy.
+            if ('detail' in event)
+              sY = event.detail;
+            else if ('wheelDelta' in event)
+              sY = event.wheelDelta / -120;
+            else if ('wheelDeltaY' in event)
+              sY = event.wheelDeltaY / -120;
+
+            if ('wheelDeltaX' in event)
+              sX = event.wheelDeltaX / -120;
+
+          // Side scrolling on FF with DOMMouseScroll.
+            if ('axis' in event
+            &&  event.axis === event.HORIZONTAL_AXIS) {
+              sX = sY;
+              sY = 0;
+            }
+
+          // Calculate.
+            pX = sX * pixelStep;
+            pY = sY * pixelStep;
+
+            if ('deltaY' in event)
+              pY = event.deltaY;
+
+            if ('deltaX' in event)
+              pX = event.deltaX;
+
+            if ((pX || pY)
+            &&  event.deltaMode) {
+
+              if (event.deltaMode == 1) {
+                pX *= lineHeight;
+                pY *= lineHeight;
+              }
+              else {
+                pX *= pageHeight;
+                pY *= pageHeight;
+              }
+
+            }
+
+          // Fallback if spin cannot be determined.
+            if (pX && !sX)
+              sX = (pX < 1) ? -1 : 1;
+
+            if (pY && !sY)
+              sY = (pY < 1) ? -1 : 1;
+
+          // Return.
+            return {
+              spinX: sX,
+              spinY: sY,
+              pixelX: pX,
+              pixelY: pY
+            };
+
+        };
+
+      // Wheel event.
+        $body.on('wheel', function(event) {
+
+          // Disable on <=small.
+            // if (skel.breakpoint('small').active)
+            //   return;
+
+          // Prevent default.
+            event.preventDefault();
+            event.stopPropagation();
+
+          // Stop link scroll.
+            $bodyHtml.stop();
+
+          // Calculate delta, direction.
+            var n = normalizeWheel(event.originalEvent),
+              x = (n.pixelX != 0 ? n.pixelX : n.pixelY),
+              delta = Math.min(Math.abs(x), 150) * settings.scrollWheel.factor,
+              direction = x > 0 ? 1 : -1;
+
+          // Scroll page.
+            $document.scrollLeft($document.scrollLeft() + (delta * direction));
+        });
+  }
   render() {
     return (
       <div id="scrap-demo">
@@ -90,3 +206,4 @@ export default class ScrapDemo extends Component {
     );
   }
 }
+
