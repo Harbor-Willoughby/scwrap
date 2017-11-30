@@ -2596,6 +2596,11 @@ h6 {
  */
 @font-face {
   font-family: 'Gotham';
+  font-weight: 300;
+  src: url("assets/fonts/Gotham/GothamLight.woff2") format("woff2"), url("assets/fonts/Gotham/GothamLight.woff") format("woff"), url("assets/fonts/Gotham/GothamLight.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Gotham';
   font-weight: 700;
   src: url("assets/fonts/Gotham/GothamBold.woff2") format("woff2"), url("assets/fonts/Gotham/GothamBold.woff") format("woff"), url("assets/fonts/Gotham/GothamBold.ttf") format("truetype"); }
 
@@ -2945,12 +2950,28 @@ button,
   background-size: cover; }
 
 #scrap-demo {
-  height: 100vh;
+  min-height: 100vh;
+  position: relative;
   background: url("assets/images/03_scrap_01_bg.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+  #scrap-demo .scrap-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5.416rem; }
+  #scrap-demo .day {
+    text-align: left;
+    margin-bottom: 3rem; }
+    #scrap-demo .day h1 {
+      display: inline-block;
+      font-size: 3.133rem;
+      font-weight: 900; }
+    #scrap-demo .day span {
+      font-size: 1.204rem;
+      margin-left: 1.25rem; }
   #scrap-demo .grid .text {
     background: white;
     text-align: left; }

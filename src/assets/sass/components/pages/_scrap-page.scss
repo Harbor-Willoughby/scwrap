@@ -9,14 +9,42 @@
 
 // Sacrap Demo
 #scrap-demo {
-	height: 100vh;
+	// height: 100vh;
+	min-height: 100vh;
+	position: relative;
+	// display: flex;
+	// flex-direction: column;
+	// align-items: stretch;
+	// justify-content: space-between;
 	background: url('assets/images/03_scrap_01_bg.jpg') no-repeat center center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 
+	.scrap-wrapper {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		margin-left: 5.416rem;
+	}
+
+	.day {
+		text-align: left;
+		margin-bottom: 3rem;
+		h1 {
+			display: inline-block;
+			font-size: 3.133rem;
+			font-weight: 900;
+		}
+		span {
+			font-size: 1.204rem;
+			margin-left: 1.25rem;
+		}
+	}
+
 	.grid {
+		// max-height: 29.16rem;
 		.text {
 			background: white;
 			text-align: left;
@@ -38,6 +66,5 @@
 			color: #0389f1;
 			font-weight: 300;
 		}
-
 	}
 }

@@ -12,44 +12,77 @@ export default class ScrapDemo extends Component {
     return (
       <div id="scrap-demo">
         <TopNav/>
-        <div className="grid tile is-ancestor">
+        <div className="scrap-wrapper">
           <div className="day">
             <div>
               <h1>DAY 1</h1>
               <span>2017 - 10 - 21</span>
             </div>
           </div>
-          <div className="tile">
-              <img className="image" src={img1} />
-          </div>
-          <div className="tile is-vertical">
-            <div className="box tile link">
-              <img className="image" src={img2} />
-              <div className="text">
-                <h1>빨간지붕 마을</h1>
-                <a href="https://github.com/storybooks/storybook">https://github.com/storybooks/storybook</a>
+          <div className="grid tile is-ancestor">
+            <div className="tile">
+                <img className="image" src={img1} />
+            </div>
+            <div className="tile is-vertical">
+              <div className="box tile link">
+                <img className="image" src={img2} />
+                <div className="text">
+                  <h1>빨간지붕 마을</h1>
+                  <a href="https://github.com/storybooks/storybook">https://github.com/storybooks/storybook</a>
+                </div>
+              </div>
+              <div className="box tile">
+                <img className="image" src={img3} />
               </div>
             </div>
-            <div className="box tile">
-              <img className="image" src={img3} />
-            </div>
-          </div>
-          <div className="tile is-vertical">
-            <div className="box tile">
-              <img className="image" src={img4} />
-              <img className="image" src={img5} />
-            </div>
-            <div className="box tile memo">
-               <div className="text">
-                 <h1>오랑주리 미술관</h1>
-                 <p>여행자가 된 화가의 미술관 산책 여행자가 된 화가의 미술관 산책 </p>
-                 <p>‘화가가 사랑한 파리 미술관’</p>
-                 <p>(01)4477-8007</p>
-                 <p>12:30~19:00(금 ~21:00)</p>
-                 <p>화요일 휴관</p>
+            <div className="tile is-vertical">
+              <div className="box tile">
+                <img className="image" src={img4} />
+                <img className="image" src={img5} />
               </div>
-              <img className="image" src={img6} />
-              
+              <div className="box tile memo">
+                 <div className="text">
+                   <h1>오랑주리 미술관</h1>
+                   <p>여행자가 된 화가의 미술관 산책 여행자가 된 화가의 미술관 산책 </p>
+                   <p>‘화가가 사랑한 파리 미술관’</p>
+                   <p>(01)4477-8007</p>
+                   <p>12:30~19:00(금 ~21:00)</p>
+                   <p>화요일 휴관</p>
+                </div>
+                <img className="image" src={img6} />
+              </div>
+            </div>
+            <div className="tile">
+                <img className="image" src={img1} />
+            </div>
+            <div className="tile is-vertical">
+              <div className="box tile link">
+                <img className="image" src={img2} />
+                <div className="text">
+                  <h1>빨간지붕 마을</h1>
+                  <a href="https://github.com/storybooks/storybook">https://github.com/storybooks/storybook</a>
+                </div>
+              </div>
+              <div className="box tile">
+                <img className="image" src={img3} />
+              </div>
+            </div>
+            <div className="tile is-vertical">
+              <div className="box tile">
+                <img className="image" src={img4} />
+                <img className="image" src={img5} />
+              </div>
+              <div className="box tile memo">
+                 <div className="text">
+                   <h1>오랑주리 미술관</h1>
+                   <p>여행자가 된 화가의 미술관 산책 여행자가 된 화가의 미술관 산책 </p>
+                   <p>‘화가가 사랑한 파리 미술관’</p>
+                   <p>(01)4477-8007</p>
+                   <p>12:30~19:00(금 ~21:00)</p>
+                   <p>화요일 휴관</p>
+                </div>
+                <img className="image" src={img6} />
+              </div>
             </div>
           </div>
         </div>
