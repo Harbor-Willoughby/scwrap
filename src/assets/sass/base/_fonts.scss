@@ -28,6 +28,13 @@
  */
 @font-face {
     font-family: 'Gotham';
+    font-weight: 300;
+    src: url('assets/fonts/Gotham/GothamLight.woff2') format('woff2'),
+    url('assets/fonts/Gotham/GothamLight.woff') format('woff'),
+    url('assets/fonts/Gotham/GothamLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Gotham';
     font-weight: 700;
     src: url('assets/fonts/Gotham/GothamBold.woff2') format('woff2'),
     url('assets/fonts/Gotham/GothamBold.woff') format('woff'),
