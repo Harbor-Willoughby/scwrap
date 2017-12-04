@@ -9,27 +9,27 @@ class CreateMemo extends Component {
     super(props);
     this.state = {
       memo_text: "",
-      link_url: "",
-
+      link: "",
     }
   }
 
   handleChange(e) {
     const input_text = e.target.value;
+    console.log("input_text",input_text);
     const reg = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
     console.log('if', reg.test(input_text));
     if (reg.test(input_text)) {
       this.setState(
         {
           memo_text: "",
-          link_url: input_text
+          link: input_text
         }
       )
     } else {
       this.setState(
         {
           memo_text: input_text,
-          link_url: ""
+          link: ""
         }
       )
     }
@@ -37,15 +37,13 @@ class CreateMemo extends Component {
 
   handleClick() {
     console.log("memo_text", this.state.memo_text);
-    console.log("link_url", this.state.link_url);
+    console.log("link", this.state.link);
     console.log('trip_key', this.props);
     const trip_key = this.props.tripKey;
-    if (isEmpty(this.state.memo_text)) {
-      /*
-      todo: when input is link...
-      */
-      return console.log('memo empty, todo when link url input');
-    } else if (isEmpty(this.state.link_url)) {
+    if ((isEmpty(this.state.memo_text)) && (isEmpty(this.state.link))) {
+      return console.log('memo or link is required');
+    } else if (isEmpty(this.state.link)) {
+      // memo text
       const memo_data = {
         text: this.state.memo_text,
         trip: trip_key
@@ -58,9 +56,16 @@ class CreateMemo extends Component {
         });
       });
       ReactDOM.findDOMNode(this.refs.memo_text_input).value = '';
-    } else {
-      return console.log('memo or link is required');
+    } else if (isEmpty(this.state.memo_text)) {
+      // link_text
+      /*
+      todo : when link type input
+       */
+      
+
+      return console.log("this is link")
     }
+    return console.log('memo or link is required');
   }
 
 
@@ -70,16 +75,18 @@ class CreateMemo extends Component {
     };
     return (
       <div>
-        <textarea
-          ref="memo_text_input"
-          name="body"
-          id="memo_text"
-          cols="15"
-          rows="5"
-          style={style}
-          placeholder="Memo & Link"
-          onChange={this.handleChange.bind(this)} />
-        <button onClick={this.handleClick.bind(this)}>+</button>
+        <div>
+          <textarea
+            ref="memo_text_input"
+            name="body"
+            id="memo_text"
+            cols="15"
+            rows="5"
+            style={style}
+            placeholder="Memo & Link"
+            onChange={this.handleChange.bind(this)} />
+          <button onClick={this.handleClick.bind(this)}>+</button>
+        </div>
       </div>
     );
   }
