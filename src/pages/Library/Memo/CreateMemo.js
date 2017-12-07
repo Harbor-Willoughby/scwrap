@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import firebase from '../../../firebase';
 import * as ReactDOM from "react-dom";
 import axios from "axios";
+import {connect} from "react-redux";
+import {isEmpty} from "lodash";
 
 class CreateMemo extends Component {
   constructor(props) {
