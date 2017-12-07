@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import firebase from '../../../firebase';
 import * as ReactDOM from "react-dom";
 import {isEmpty} from "lodash";
-
+import axios from "axios";
+import {connect} from "react-redux";
 
 class CreateMemo extends Component {
   constructor(props) {
@@ -44,11 +45,37 @@ class CreateMemo extends Component {
       /*
       todo: when input is link...
       */
-      return console.log('memo empty, todo when link url input');
+      axios.get("http://localhost:5000/" + this.state.link_url, {
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        }
+      }).then((res) => {
+        if (res.status === 200) {
+          const img_url = res.data;
+          console.log('img_url', img_url);
+          const link_data = {
+            text: this.state.link_url,
+            img_link: img_url,
+            trip: trip_key,
+            uid: this.props.uid
+          };
+          firebase.database().ref('/trips/' + trip_key + '/memos').push(true).then((snapshot) => {
+            const memo_id = snapshot.key;
+            firebase.database().ref('/memos/' + memo_id).set(link_data).catch((error) => {
+              firebase.database().ref('/trips/' + trip_key + '/memos').remove();
+              console.log('save memo error', error);
+            });
+          });
+          ReactDOM.findDOMNode(this.refs.memo_text_input).value = '';
+        }
+      }).catch((error) => {
+        console.log('error', error)
+      });
     } else if (isEmpty(this.state.link_url)) {
       const memo_data = {
         text: this.state.memo_text,
-        trip: trip_key
+        trip: trip_key,
+        uid: this.props.uid
       };
       firebase.database().ref('/trips/' + trip_key + '/memos').push(true).then((snapshot) => {
         const memo_id = snapshot.key;
@@ -85,4 +112,9 @@ class CreateMemo extends Component {
   }
 }
 
-export default CreateMemo;
+
+const mapStateToProps = (state) => ({
+  uid: state.auth.uid
+});
+
+export default connect(mapStateToProps)(CreateMemo);
