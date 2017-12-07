@@ -24,6 +24,7 @@ class MemoList extends Component {
           memos.key = memoKey;
           memos.push(memo);
           this.setState({memos: memos})
+          console.log('memos', memos);
         })
       });
     })
@@ -41,13 +42,21 @@ class MemoList extends Component {
             데이터 로딩중
           </div>
         ) : this.state.memos.map((memo, i) => {
-          return (
-            <div key={i}>
-              <p>{memo.text}</p>
-            </div>
-          )
-        })
-        }
+          if (memo.img_link) {
+            return (
+                <div key={i}>
+                  <p>{memo.text}</p>
+                  <img src={memo.img_link} alt="" height={200} width={200}/>
+                </div>
+            )
+          } else {
+            return (
+                <div key={i}>
+                  <p>{memo.text}</p>
+                </div>
+            )
+          }
+        })}
       </div>
     );
   }
