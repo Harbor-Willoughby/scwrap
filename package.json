@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "cheerio": "^1.0.0-rc.2",
     "firebase": "^4.6.0",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -23,8 +22,7 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "request": "^2.83.0",
-    "sass-loader": "^6.0.6",
-    "url-parse": "^1.2.0"
+    "sass-loader": "^6.0.6"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",

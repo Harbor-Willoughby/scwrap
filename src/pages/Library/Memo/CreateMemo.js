@@ -4,6 +4,7 @@ import * as ReactDOM from "react-dom";
 import axios from "axios";
 import {connect} from "react-redux";
 import {isEmpty} from "lodash";
+import PythonShell from "python-shell";
 
 class CreateMemo extends Component {
   constructor(props) {
@@ -38,11 +39,11 @@ class CreateMemo extends Component {
 
   handleClick() {
     console.log("memo_text", this.state.memo_text);
-    console.log("link", this.state.link);
+    console.log("link", this.state.link_url);
     console.log('trip_key', this.props);
     const trip_key = this.props.tripKey;
     if (isEmpty(this.state.memo_text)) {
-      axios.get("http://localhost:5000/" + this.state.link_url, {
+      axios.get("http://127.0.0.1:5000/" + this.state.link_url, {
         headers: {
           'Access-Control-Allow-Origin': '*'
         }
